@@ -176,7 +176,6 @@ class AddBike extends React.Component {
         this.setState({
             ...this.state,
             bikeName: '',
-            selectedType: 'Custom',
             bikePrice: ''
         })
     }
@@ -205,7 +204,8 @@ class AddBike extends React.Component {
                         Bike type:
                         <select
                             className='add-bike-input type-select'
-                            onChange={this.handleChangeType}>
+                            onChange={this.handleChangeType}
+                            >
                             {types}
                         </select>
                     </label>
@@ -267,7 +267,7 @@ function RentedBikes(props) {
         <div key={el._id} className="bikes-block">
             <div className='rented-info'>
                 <span>{el.name} / {el.type} / ${el.currentPrice}</span>
-                <small>In rent for {el.rentedHours} hour(s), price for hour: {el.price} $</small>
+                <small>In rent for {el.rentedHours} hour(s), price for hour: ${el.price}</small>
             </div>
 
             <button
